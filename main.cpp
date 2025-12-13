@@ -2,9 +2,9 @@
 
 int main(int argc, char* argv[]) {
     //需要修改的数据库信息,登录名,密码,库名
-    string user = " ";
-    string passwd = " ";
-    string databasename = " ";
+    string user = "www";
+    string passwd = "Qwe.123!";
+    string databasename = "webdb";
 
     //命令行解析
     Config config;
