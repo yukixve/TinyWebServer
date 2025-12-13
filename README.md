@@ -11,5 +11,5 @@ TinyWebServer
 ---------
 
 #### 1. 支持MariaDB
-        使用 MariaDB 代替了 mysql
+使用 **MariaDB** 代替了 mysql
         
