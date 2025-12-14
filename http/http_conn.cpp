@@ -529,8 +529,7 @@ bool http_conn::add_content_length(int content_len) {
     return add_response("Content-Length:%d\r\n", content_len);
 }
 bool http_conn::add_content_type() {
-    return add_response("Content-Type:%s\r\n", "text/html");
-    // return add_response("Content-Type: %s\r\n", "text/html; charset=utf-8");
+    return add_response("Content-Type: %s\r\n", "text/html; charset=utf-8");
 }
 bool http_conn::add_linger() {
     return add_response("Connection:%s\r\n", (m_linger == true) ? "keep-alive" : "close");
