@@ -53,8 +53,8 @@ bool Log::init(const char* file_name,
                  my_tm.tm_mday,
                  file_name);
     } else {
-        strcpy(log_name, p + 1);
-        strncpy(dir_name, file_name, p - file_name + 1);
+        strncpy(log_name, "tinywebserver.log", sizeof(log_name) - 1);
+        strncpy(dir_name, "/var/log/tinywebserver/", sizeof(dir_name) - 1);
         snprintf(log_full_name,
                  255,
                  "%s%d_%02d_%02d_%s",
