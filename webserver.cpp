@@ -36,7 +36,8 @@ void WebServer::init(int port,
                      int sql_num,
                      int thread_num,
                      int close_log,
-                     int actor_model) {
+                     int actor_model,
+                     string db_addr) {
     m_port = port;
     m_user = user;
     m_passWord = passWord;
@@ -48,6 +49,7 @@ void WebServer::init(int port,
     m_TRIGMode = trigmode;
     m_close_log = close_log;
     m_actormodel = actor_model;
+    m_dbaddr = db_addr;
 }
 
 void WebServer::trig_mode() {
@@ -86,7 +88,7 @@ void WebServer::log_write() {
 void WebServer::sql_pool() {
     //初始化数据库连接池
     m_connPool = connection_pool::GetInstance();
-    m_connPool->init("localhost", m_user, m_passWord, m_databaseName, 3306, m_sql_num, m_close_log);
+    m_connPool->init(m_dbaddr, m_user, m_passWord, m_databaseName, 3306, m_sql_num, m_close_log);
 
     //初始化数据库读取表
     users->initmysql_result(m_connPool);

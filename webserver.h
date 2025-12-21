@@ -34,7 +34,8 @@ public:
               int sql_num,
               int thread_num,
               int close_log,
-              int actor_model);
+              int actor_model,
+              string db_addr);
 
     void thread_pool();
     void sql_pool();
@@ -60,6 +61,7 @@ public:
 
     int m_pipefd[2];
     int m_epollfd;
+    string m_dbaddr;
     http_conn* users;
 
     //数据库相关

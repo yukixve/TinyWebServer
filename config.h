@@ -41,6 +41,9 @@ public:
 
     //并发模型选择
     int actor_model;
+
+    //数据库地址 (方便跨容器部署)
+    string db_addr;
 };
 
 #endif
