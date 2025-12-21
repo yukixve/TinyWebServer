@@ -1,4 +1,5 @@
 *_ServerLog
 server
+priv.*
 Dockerfile
 docker-compose.*
